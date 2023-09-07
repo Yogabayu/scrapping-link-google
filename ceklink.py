@@ -22,21 +22,24 @@ def get_google_search_links(query):
         print("Gagal mengambil halaman web")
         return []
 
-print("===================================")
-print("========== Web Scraping ===========")
-print("===================================")
-print("\n")
-print("Contoh untuk mencari situs yang mengandung kata 'slot' => site:dpr.go.id slot")
-print("\n")
+while True:
+    print("===================================")
+    print("========== Web Scraping ===========")
+    print("===================================")
+    print("\n")
+    print("Contoh untuk mencari situs yang mengandung kata 'slot' => site:dpr.go.id slot\n")
 
-query = input("Masukkan query pencarian Google: \n")
+    query = input("Masukkan query pencarian Google: \n")
 
-links = get_google_search_links(query)
+    links = get_google_search_links(query)
 
-if len(links) > 0:
-    print("\nHasil Pencarian:")
-    for i, link in enumerate(links, start=1):
-        print(f"{i}. {link}")
-else:
-    print("\nTidak ditemukan hasil pencarian.")
+    if len(links) > 0:
+        print("\nHasil Pencarian:")
+        for i, link in enumerate(links, start=1):
+            print(f"{i}. {link}")
+    else:
+        print("\nTidak ditemukan hasil pencarian.")
 
+    ulangi = input("\nApakah Anda ingin melakukan pencarian lagi? (y/n): ")
+    if ulangi.lower() != 'y':
+        break
